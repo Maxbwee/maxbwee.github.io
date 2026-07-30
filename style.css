@@ -22,3 +22,18 @@ section {
 @media (max-width: 576px) {
   :root { --navbar-height: 56px; }
 }
+
+#home {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+#home .badge {
+    font-size: 0.95rem;
+    padding: 0.6em 1em;
+}
+
+#home img {
+    border: 5px solid white;
+}
