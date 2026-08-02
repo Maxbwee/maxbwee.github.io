@@ -37,3 +37,44 @@ section {
 #home img {
     border: 5px solid white;
 }
+
+section {
+    padding: 60px 0;
+}
+
+.about-card {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 1rem;
+    box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.06);
+}
+
+.about-card h3 {
+    font-weight: 700;
+    color: #1f2a44;
+}
+
+.about-text {
+    text-align: left;
+    margin-bottom: 0.8rem;
+    line-height: 1.7;
+}
+
+.about-details {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 0.9rem;
+    padding: 1.25rem;
+}
+
+.about-details strong {
+    display: block;
+    margin-bottom: 0.2rem;
+    color: #0d6efd;
+}
+
+@media (max-width: 992px) {
+    .about-card h3 {
+        text-align: center;
+    }
+}
