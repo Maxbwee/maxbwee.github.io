@@ -6,11 +6,28 @@
 /* Smooth scrolling for in-page navigation */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* Ensure page content isn't hidden under a fixed navbar when loading */
 body {
   padding-top: var(--navbar-height);
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, p, li, span, a, .nav-link, .navbar-brand {
+  overflow-wrap: anywhere;
 }
 
 /* When navigating to an anchor, offset the scroll position so the element sits below the navbar */
@@ -25,8 +42,13 @@ section {
 
 #home {
     min-height: 60vh;
-    display: flex;
-    align-items: center;
+}
+
+#home .row {
+    min-height: 60vh;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 #home .badge {
@@ -39,6 +61,13 @@ section {
 }
 
 section {
+    padding: 60px 0;
+}
+
+section#home,
+section#experience,
+section#about,
+section#contact {
     padding: 60px 0;
 }
 
@@ -76,5 +105,142 @@ section {
 @media (max-width: 992px) {
     .about-card h3 {
         text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        padding-top: 56px !important;
+    }
+
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #home .col-lg-7,
+    #home .col-lg-5,
+    #about .col-lg-7,
+    #about .col-lg-5,
+    #experience .col-md-6 {
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
+
+    .row > [class^="col-"],
+    .row > [class*="col-"] {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    section#home,
+    section#experience,
+    section#about,
+    section#contact {
+        padding: 40px 0 !important;
+    }
+
+    #home {
+        min-height: auto !important;
+    }
+
+    #home .row {
+        flex-direction: column;
+        min-height: auto !important;
+    }
+
+    #home .display-4 {
+        font-size: 2.1rem !important;
+    }
+
+    #home .badge {
+        font-size: 0.8rem !important;
+        padding: 0.45em 0.7em !important;
+    }
+
+    #home img {
+        max-width: 220px !important;
+        margin-top: 1rem !important;
+    }
+
+    .btn {
+        width: 100% !important;
+        max-width: 220px !important;
+    }
+
+    .about-card .card-body {
+        padding: 1.25rem !important;
+    }
+
+    .card {
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+    }
+
+    #experience .card,
+    #about .card {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #experience {
+        text-align: center;
+    }
+
+    #experience .row {
+        display: block;
+    }
+
+    #experience .col-md-6 {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    #experience .col-md-6 > h2,
+    #experience .card,
+    #experience ul {
+        width: 100%;
+        max-width: 540px;
+    }
+
+    #experience ul {
+        padding-left: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    #experience .card {
+        margin: 0 auto 1rem;
+        text-align: left;
+        width: calc(100% - 1rem);
+    }
+
+    #experience .card-body {
+        padding: 1rem;
+    }
+
+    .about-details {
+        padding: 1rem !important;
+        margin-top: 0.5rem;
+    }
+
+    .about-text {
+        font-size: 1rem !important;
+    }
+
+    .card-body h4,
+    .card-body li {
+        overflow-wrap: anywhere;
     }
 }
